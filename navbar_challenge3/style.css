@@ -1,0 +1,151 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    line-height: 1.2em;
+    font-size: 1.125rem;
+    background-color: #c69999;
+    font-family: 'Libre Franklin', sans-serif;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+header{
+    background-color: aliceblue;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    max-width: 1100px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+/* Navigation styling */
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 10vh;
+}
+
+.logo{
+    text-transform: uppercase;
+    color: #1b1b1b;
+}
+
+.nav-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav__list{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.4em;
+}
+
+.nav__primary{
+    margin-left:  auto;
+    
+}
+
+.nav__secondary{
+    margin-left: 1em;
+}
+
+
+.nav__link{
+    color: #1a1a1a;
+    text-transform: uppercase;
+}
+
+
+.nav__link--btn{
+    display: inline-block;
+    color: #fff;
+    padding: .55rem 1.5rem;
+    background-color: #1a1a1a;
+    border-radius: 5px;
+}
+
+
+#hamburgerBtn{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    height: 3px;
+    width: 25px;
+    margin: 5px auto;
+    background-color: #1a1a1a;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+
+
+@media  (max-width: 900px) {
+   #hamburgerBtn{
+        display: block;
+   }
+
+   #hamburgerBtn.active .bar:nth-child(2){
+        opacity: 0;
+   }
+
+   #hamburgerBtn.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+   }
+
+   #hamburgerBtn.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav__list{
+        position: absolute;
+        top: 10vh;
+        left: -100%;
+        gap: 0;
+        flex-direction: column;
+        background-color: red;
+        width: 100%;
+        text-align: center;
+        transition: .3s;
+        padding: 2em 0;
+    }
+
+    .nav__secondary{
+        top: 260px;
+        margin-left: 0;
+
+        
+    }
+    .nav__item{
+        margin: .55em 0;
+    }
+
+    .nav__list.active{
+        left: 0;
+    }
+    .nav__link--btn{
+        margin: .44em 0;
+    }
+}
